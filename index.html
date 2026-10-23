@@ -194,9 +194,9 @@ footer .in{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wr
 <main id="top">
   <section class="hero"><div class="wrap g12">
     <div class="hero-copy">
-      <p class="eyebrow">Graphic designer · Branding · Decks · Illustration</p>
+      <p class="eyebrow">Graphic designer · Presentations · Branding · Web &amp; UI</p>
       <h1>Marita<br>Kai</h1>
-      <p class="lede">I design brands, pitch decks, social feeds, posters and menus that look sharp at first glance and hold up on a closer look.</p>
+      <p class="lede">I design presentations, pitch decks, brands and web pages that look sharp at first glance and hold up on a closer look.</p>
       <div class="cta"><a class="btn fill" href="#work">See the work ↓</a><a class="btn accent" href="#contact">Let's talk</a></div>
     </div>
     <div class="hero-art">
@@ -221,14 +221,15 @@ footer .in{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wr
   <section id="about" class="about"><div class="wrap g12">
     <h2>Hi, I'm <em>Marita.</em></h2>
     <div class="about-body">
-      <p>I'm a graphic designer based in Beirut, Lebanon, with five years of experience across brand identity, presentation design, social media and illustration. I've worked in creative agencies alongside designers and content creators, at an e-learning company, and as a freelancer, for clinics, cosmetics brands, interior studios, restaurants and tech companies.</p>
-      <p>I like work that is clear at first glance, bold in its choices and a little unexpected. I'm open to freelance projects, from a single logo or poster to a full brand identity or pitch deck.</p>
-      <div class="tags"><span>Brand identity</span><span>Presentation design</span><span>Social media</span><span>Posters</span><span>Menus</span><span>Illustration</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span><span>PowerPoint</span></div>
+      <p>I'm a graphic designer based in Beirut, Lebanon, and presentations are at the heart of what I do. Over five years I've designed pitch decks, corporate and annual reports, training content and company presentations that turn complex ideas into clear, confident slides people actually want to read.</p>
+      <p>Alongside presentations, I work across brand identity, web and UI design, social media and illustration. I've worked in creative agencies with designers and content creators, at an e-learning company, and as a freelancer for clinics, cosmetics brands, interior studios, restaurants and tech companies.</p>
+      <p>I like work that is clear at first glance, bold in its choices and a little unexpected. I'm open to freelance projects, from a single pitch deck or company presentation to a full brand identity.</p>
+      <div class="tags"><span>Presentation design</span><span>Pitch decks</span><span>Reports</span><span>Brand identity</span><span>Web &amp; UI design</span><span>Social media</span><span>Posters</span><span>Menus</span><span>Illustration</span><span>PowerPoint</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span></div>
     </div>
     <div class="stats">
       <div><b>5+</b><span>years designing</span></div>
       <div><b id="projN">31</b><span>projects here</span></div>
-      <div><b>7</b><span>disciplines</span></div>
+      <div><b>8</b><span>disciplines</span></div>
     </div>
   </div></section>
 
@@ -261,6 +262,8 @@ const P=[
  {t:'Solara Grid',s:'Corporate strategy deck · concept',c:'Presentations',p:[6,7]},
  {t:'Harvestly',s:'Startup pitch deck · concept',c:'Presentations',p:[8]},
  {t:'Meridian Logistics',s:'Annual review report · concept',c:'Presentations',p:[9]},
+ {t:'Aura Workspace',s:'Company portal homepage · two colourways',c:'Web & UI Design',p:[50,51]},
+ {t:'Automotive Group Website',s:'Corporate website homepage',c:'Web & UI Design',p:[52]},
  {t:'Aitic',s:'Full branding · electromechanical company',c:'Agency Work',p:[13]},
  {t:'Ayache Interior Solutions',s:'Full branding & social media',c:'Agency Work',p:[14]},
  {t:'La Vie',s:'Branding, packaging & social · cosmetics',c:'Agency Work',p:[15]},
@@ -286,7 +289,7 @@ const P=[
  {t:'Fan Art & Scenes',s:'Character and scene illustration',c:'Illustration',p:[47]},
  {t:'Digital Art & Stickers',s:'Neon art and sticker set',c:'Illustration',p:[48]}
 ];
-const CATS=['All','Presentations','Agency Work','Branding','Social Media','Posters','Menus','Illustration'];
+const CATS=['All','Presentations','Web & UI Design','Agency Work','Branding','Social Media','Posters','Menus','Illustration'];
 const $=s=>document.querySelector(s);
 $('#projN').textContent=P.length;
 const words=[...CATS.slice(1),'Brand identity','Packaging'];
@@ -295,7 +298,7 @@ $('#track').innerHTML=[...words,...words].map(w=>`<span>${w}</span>`).join('');
 $('#grid').innerHTML=P.map((x,i)=>`<button class="card" type="button" data-i="${i}" data-c="${x.c}" aria-label="Open ${x.t}">
   <span class="frame"><span class="pill">${x.c}</span><img src="thumbs/p${x.p[0]}.jpg" alt="" loading="${i<9?'eager':'lazy'}"></span>
   <span class="meta"><span><span class="t">${x.t}</span><span class="d">${x.s}</span></span><span class="arrow" aria-hidden="true">→</span></span></button>`).join('');
-$('#grid').insertAdjacentHTML('beforeend','<a class="next" id="nextTile" href="#contact"><b>Your project could be next.</b><span>Branding, decks, social, posters, menus or illustration.</span><span class="btn sm">Start a project →</span></a>');
+$('#grid').insertAdjacentHTML('beforeend','<a class="next" id="nextTile" href="#contact"><b>Your project could be next.</b><span>Presentations, branding, web, social, posters or illustration.</span><span class="btn sm">Start a project →</span></a>');
 function fitTile(){const g=$('#grid'),cols=getComputedStyle(g).gridTemplateColumns.split(' ').length,n=[...g.querySelectorAll('.card')].filter(c=>!c.hidden).length,r=n%cols;$('#nextTile').style.gridColumn=`span ${r?cols-r:cols}`}
 addEventListener('resize',fitTile);
 $('#filters').innerHTML=CATS.map(c=>`<button class="chip" type="button" data-c="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
