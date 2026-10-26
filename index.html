@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marita Doumit Kai · Graphic Designer</title>
+<meta name="description" content="Graphic design portfolio of Marita Doumit Kai: branding, presentations, social media, posters, menus and illustration.">
+<meta property="og:title" content="Marita Doumit Kai · Graphic Designer">
+<meta property="og:description" content="Branding, presentations, social media, posters, menus and illustration.">
+<meta property="og:image" content="img/p3.jpg">
+<style>
+@font-face{font-family:'Boldonse';src:url(fonts/Boldonse-Regular.ttf) format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(fonts/BricolageGrotesque-Bold.woff) format('woff');font-weight:600 800;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(fonts/BricolageGrotesque-Regular.woff) format('woff');font-weight:400 500;font-display:swap}
+@font-face{font-family:'Instrument Sans';src:url(fonts/InstrumentSans-Regular.woff) format('woff');font-weight:400 500;font-display:swap}
+@font-face{font-family:'Instrument Sans';src:url(fonts/InstrumentSans-Bold.woff) format('woff');font-weight:600 700;font-display:swap}
+/* Layout: one 12-column grid, one container edge, one 8px spacing scale.
+   Every block starts on the same left edge; cards share one frame ratio so rows line up exactly. */
+:root{
+  --paper:#111015; --surface:#1A1820; --surface2:#23202A; --ink:#F4EFF6; --soft:#A39BAA; --line:#2F2B37;
+  --accent:#B9A2FF; --hot:#FF8A5C; --wine:#8E2424;
+  --name:'Boldonse','Arial Black',system-ui,sans-serif;
+  --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --max:1280px; --gut:clamp(20px,4vw,48px); --gap:24px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:64px; --s12:96px; --s16:128px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:calc(var(--max) + 2*var(--gut));margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+.eyebrow{font:500 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:2px solid var(--ink);font:700 15px var(--display);letter-spacing:.01em;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s;white-space:nowrap}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--accent)}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:#111015}
+.btn.sm{height:40px;padding:0 18px;font-size:14px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(17,16,21,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font:800 20px var(--display);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:14px;height:14px;border-radius:50%;background:var(--accent);display:inline-block}
+.menu{display:flex;align-items:center;gap:var(--s4)}
+.menu a:not(.btn){font:500 15px var(--body);text-decoration:none;color:var(--soft)}
+.menu a:not(.btn):hover{color:var(--ink)}
+
+/* hero */
+.hero{padding-block:var(--s8) var(--s12);overflow-x:clip}
+.hero .g12{align-items:center;row-gap:var(--s6)}
+.hero-copy{grid-column:1 / span 7}
+.hero-copy .eyebrow{margin-bottom:var(--s3)}
+h1{font:400 clamp(62px,7.2vw,108px)/1.3 var(--name);letter-spacing:0;margin:0 0 var(--s4);text-transform:uppercase}
+h1 .out{color:var(--accent)}
+.lede{font-size:clamp(18px,1.6vw,21px);color:var(--soft);max-width:34ch;margin:0 0 var(--s4)}
+.cta{display:flex;gap:var(--s2);flex-wrap:wrap}
+.hero-art{grid-column:9 / span 4;position:relative;aspect-ratio:1;width:100%}
+.blob{position:absolute;inset:0;background:var(--accent);border-radius:50%}
+@keyframes morph{50%{border-radius:42% 58% 55% 45% / 55% 44% 56% 45%}}
+.portrait{position:absolute;inset:0;clip-path:inset(-40% 0 0 0 round 0 0 50% 50%)}
+.portrait img{position:absolute;left:1%;bottom:-3%;width:98%}
+.sticker{position:absolute;right:-6%;top:-6%;width:36%;aspect-ratio:1;border-radius:50%;background:var(--hot);color:#111015;display:grid;place-items:center}
+.sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
+.sticker b{font:800 clamp(18px,2vw,26px) var(--display)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.band-wrap{overflow:hidden;padding-block:12px}
+.band{background:var(--accent);color:#111015;overflow:hidden;white-space:nowrap;transform:rotate(-1.5deg);margin:0 -2%;border-block:0}
+.band .track{display:inline-flex;align-items:center;gap:var(--s4);padding:18px 0;font:800 clamp(22px,2.6vw,34px) var(--display);text-transform:uppercase;letter-spacing:-.01em;animation:slide 38s linear infinite}
+.band .track span{display:inline-flex;align-items:center;gap:var(--s4)}
+.band .track span::after{content:"";width:22px;height:22px;background:#111015;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+section{scroll-margin-top:72px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;padding-block:var(--s16) var(--s4)}
+h2{font:800 clamp(40px,5.6vw,80px)/.95 var(--display);letter-spacing:-.04em;margin:0;text-transform:uppercase}
+.head .eyebrow{margin-bottom:var(--s2)}
+.count{font:500 15px var(--body);color:var(--soft);font-variant-numeric:tabular-nums}
+
+/* filters */
+.note{margin:calc(-1*var(--s3)) 0 var(--s6);padding:var(--s2) var(--s3);border-left:3px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;color:var(--soft);font-size:15px;max-width:72ch}
+.note[hidden]{display:none}
+.vnote{margin:0;color:var(--soft);font-size:15px;padding:var(--s2) var(--s3);border-left:3px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;max-width:72ch}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s6)}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s1)}
+.chip{height:40px;padding:0 18px;border-radius:999px;border:2px solid var(--line);background:transparent;font:700 14px var(--display);color:var(--ink);cursor:pointer;transition:background .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6) var(--gap)}
+.card{display:flex;flex-direction:column;gap:var(--s2);background:none;border:0;padding:0;margin:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.card[hidden]{display:none}
+.next{display:flex;flex-direction:column;justify-content:space-between;gap:var(--s3);border-radius:20px;border:2px dashed var(--line);padding:var(--s4);text-decoration:none;min-height:100%;background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(185,162,255,.06) 14px 28px)}
+.next b{font:700 clamp(28px,3vw,44px)/1 var(--display);letter-spacing:-.03em;max-width:12ch}
+.next span{font-size:15px;color:var(--soft)}
+.next .btn{align-self:flex-start}
+.next:hover{border-color:var(--accent)}
+.next:hover .btn{background:var(--accent);border-color:var(--accent);color:#111015;transform:translate(-2px,-2px)}
+.frame{position:relative;aspect-ratio:3/2;border-radius:20px;border:2px solid var(--line);background:var(--surface);overflow:hidden;display:grid;place-items:center;padding:7%;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.frame img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.card:hover .frame{transform:translate(-4px,-4px) rotate(-.6deg);border-color:var(--accent);box-shadow:8px 8px 0 var(--accent)}
+.pill{position:absolute;left:14px;top:14px;height:28px;padding:0 12px;border-radius:999px;background:var(--paper);border:2px solid var(--line);color:var(--soft);font:700 12px/24px var(--display);letter-spacing:.02em}
+.meta{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s2)}
+.card .t{display:block;font:700 21px/1.2 var(--display);letter-spacing:-.01em}
+.card .d{display:block;margin-top:4px;font-size:15px;color:var(--soft)}
+.arrow{flex:none;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:18px;transition:background .2s,transform .3s}
+.card:hover .arrow{background:var(--accent);border-color:var(--accent);color:#111015;transform:rotate(-45deg)}
+
+/* about */
+.about{margin-top:var(--s16);background:var(--surface);color:var(--ink);border-block:2px solid var(--line)}
+.about .g12{padding-block:var(--s16);row-gap:var(--s6)}
+.about h2{grid-column:1 / span 5;color:var(--ink)}
+.about h2 em{font-style:normal;color:var(--accent)}
+.about-body{grid-column:7 / span 6}
+.about-body p{margin:0 0 var(--s3);font-size:19px;color:#CFC7D4;max-width:52ch}
+.ph{display:inline-block;background:var(--hot);color:#111015;border-radius:8px;padding:0 8px;font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:var(--s1);margin-top:var(--s4)}
+.tags span{height:36px;padding:0 16px;display:inline-flex;align-items:center;border-radius:999px;border:2px solid var(--line);font:500 14px var(--body);color:var(--ink)}
+.stats{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);border-top:2px solid var(--line);padding-top:var(--s6)}
+.stats b{display:block;font:800 clamp(48px,6vw,88px)/1 var(--display);letter-spacing:-.04em;color:var(--accent)}
+.stats span{font-size:15px;color:var(--soft)}
+
+/* contact */
+.contact .g12{padding-block:var(--s16) var(--s12);row-gap:var(--s6);align-items:end}
+.contact h2{grid-column:1 / span 7;font-size:clamp(48px,8vw,120px)}
+.contact h2 .out{color:#111015;background:var(--accent);padding:0 .12em;border-radius:.12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.clist{grid-column:9 / span 4;display:grid;gap:0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:56px;border-bottom:2px solid var(--line)}
+.row:first-child{border-top:2px solid var(--line)}
+.row span{font:500 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.row b,.row .val{font:700 16px var(--display);text-align:right;overflow-wrap:anywhere}
+.row .val{text-decoration:none;color:var(--ink)}
+.row .val:hover{color:var(--accent)}
+.clist .btn{margin-top:var(--s3);justify-self:start}
+footer .in{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;padding-block:var(--s3) var(--s6);font-size:14px;color:var(--soft);border-top:2px solid var(--line)}
+
+/* project viewer */
+.viewer{position:fixed;inset:0;z-index:60;background:var(--paper);overflow:auto;overscroll-behavior:contain}
+.viewer[hidden]{display:none}
+.vbar{position:sticky;top:0;z-index:2;background:rgba(17,16,21,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+.vbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:80px}
+.vbar h3{font:800 clamp(20px,2.4vw,28px)/1.1 var(--display);letter-spacing:-.02em;margin:0}
+.vbar h3 small{display:block;font:400 14px var(--body);color:var(--soft);letter-spacing:0;margin-top:4px}
+.vctl{display:flex;gap:var(--s1)}
+.round{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:transparent;font:700 18px var(--display);color:var(--ink);cursor:pointer}
+.round:hover{background:var(--accent);border-color:var(--accent);color:#111015}
+.vbody .wrap{display:grid;gap:var(--s4);padding-block:var(--s6) var(--s12)}
+.vbody img{width:100%;border-radius:16px;border:2px solid var(--line)}
+.vnext{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding-top:var(--s4);border-top:2px solid var(--line)}
+.vnext button{background:none;border:0;padding:0;font:inherit;color:var(--ink);cursor:pointer;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}
+.vnext button:last-child{text-align:right;align-items:flex-end}
+.vnext span{display:block;font:500 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+.vnext b{font:800 clamp(20px,2.4vw,30px) var(--display);letter-spacing:-.02em}
+
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-copy{grid-column:1 / -1}
+  .hero-art{grid-column:1 / span 7;max-width:420px}
+  .about h2,.about-body,.contact h2,.clist{grid-column:1 / -1}
+}
+@media (max-width:640px){
+  :root{--gap:16px}
+  .grid{grid-template-columns:1fr}
+  .menu a:not(.btn){display:none}
+  .hero{padding-block:var(--s4) var(--s8)}
+  .hero-art{grid-column:1 / -1;max-width:340px;margin-left:8px}
+  h1{font-size:11.5vw}
+  .head{padding-block:var(--s12) var(--s3)}
+  .about .g12,.contact .g12{padding-block:var(--s12)}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><i></i>Marita Doumit Kai</a>
+  <nav class="menu" aria-label="Main">
+    <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a class="btn sm" href="Marita_Kai_Portfolio.pdf" download>Download PDF</a>
+  </nav>
+</div></header>
+
+<main id="top">
+  <section class="hero"><div class="wrap g12">
+    <div class="hero-copy">
+      <p class="eyebrow">Graphic designer · Presentations · Branding · Web &amp; UI</p>
+      <h1>Portfolio</h1>
+      <p class="lede">I design presentations, pitch decks, brands and web pages that look sharp at first glance and hold up on a closer look.</p>
+      <div class="cta"><a class="btn fill" href="#work">See the work ↓</a><a class="btn accent" href="#contact">Let's talk</a></div>
+    </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <div class="portrait"><img src="img/hero.png" alt="Illustrated self-portrait of Marita with curly red hair" width="1000" height="726"></div>
+      <div class="sticker" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><defs><path id="c" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text font-family="Bricolage Grotesque" font-weight="700" font-size="13" letter-spacing="0" fill="#111015"><textPath href="#c" textLength="234" lengthAdjust="spacing">OPEN FOR FREELANCE ✦</textPath></text></svg>
+        <b>✦</b>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="band-wrap" aria-hidden="true"><div class="band"><div class="track" id="track"></div></div></div>
+
+  <section id="work" class="wrap">
+    <div class="head"><div><p class="eyebrow">Selected projects</p><h2>The work</h2></div></div>
+    <div class="toolbar"><div class="filters" role="group" aria-label="Filter projects" id="filters"></div><span class="count" id="count" aria-live="polite"></span></div>
+    <p class="note" id="agencyNote" hidden>Agency projects are team efforts. I was the main designer on these, working alongside other designers, copywriters and the client to reach the final result.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="about" class="about"><div class="wrap g12">
+    <h2>Hi, I'm <em>Marita.</em></h2>
+    <div class="about-body">
+      <p>I'm a graphic designer based in Beirut, Lebanon, and presentations are at the heart of what I do. Over five years I've designed pitch decks, corporate and annual reports, training content and company presentations that turn complex ideas into clear, confident slides people actually want to read.</p>
+      <p>Alongside presentations, I work across brand identity, web and UI design, social media and illustration. I've worked in creative agencies with designers and content creators, at an e-learning company, and as a freelancer for clinics, cosmetics brands, interior studios, restaurants and tech companies.</p>
+      <p>I like work that is clear at first glance, bold in its choices and a little unexpected. I'm open to freelance projects, from a single pitch deck or company presentation to a full brand identity.</p>
+      <div class="tags"><span>Presentation design</span><span>Pitch decks</span><span>Reports</span><span>Brand identity</span><span>Web &amp; UI design</span><span>Social media</span><span>Posters</span><span>Menus</span><span>Illustration</span><span>PowerPoint</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span></div>
+    </div>
+    <div class="stats">
+      <div><b>5+</b><span>years designing</span></div>
+      <div><b id="projN">31</b><span>projects here</span></div>
+      <div><b>8</b><span>disciplines</span></div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="contact"><div class="wrap g12">
+    <h2>Let's make<br><span class="out">something</span><br>good.</h2>
+    <div class="clist">
+      <div class="row"><span>Email</span><a class="val" href="mailto:maritakai2001@gmail.com">maritakai2001@gmail.com</a></div>
+      <div class="row"><span>LinkedIn</span><a class="val" href="https://www.linkedin.com/in/marita-kai-9258a8235" target="_blank" rel="noopener">marita-kai ↗</a></div>
+      <div class="row"><span>Based in</span><b>Beirut, Lebanon</b></div>
+      <a class="btn fill" href="Marita_Kai_Portfolio.pdf" download>Download full portfolio</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap"><div class="in"><span>© 2026 Marita Doumit Kai</span><span>Projects marked "concept" are self-initiated.</span></div></div></footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="vTitle" hidden>
+  <div class="vbar"><div class="wrap">
+    <h3 id="vTitle"></h3>
+    <div class="vctl"><button class="round" id="vPrev" type="button" aria-label="Previous project">←</button><button class="round" id="vNext" type="button" aria-label="Next project">→</button><button class="round" id="vClose" type="button" aria-label="Close project">✕</button></div>
+  </div></div>
+  <div class="vbody"><div class="wrap" id="vBody"></div></div>
+</div>
+
+<script>
+const P=[
+ {t:'Nocturne',s:'Art exhibition deck, dark mode · concept',c:'Presentations',p:[3]},
+ {t:'Velvet Alibi',s:'Noir film moodboard · concept',c:'Presentations',p:[4]},
+ {t:'Still Water',s:'Drama film pitch deck · concept',c:'Presentations',p:[5]},
+ {t:'Solara Grid',s:'Corporate strategy deck · concept',c:'Presentations',p:[6,7]},
+ {t:'Harvestly',s:'Startup pitch deck · concept',c:'Presentations',p:[8]},
+ {t:'Meridian Logistics',s:'Annual review report · concept',c:'Presentations',p:[9]},
+ {t:'Aura Workspace',s:'Company portal homepage · two colourways',c:'Web & UI Design',p:[50,51]},
+ {t:'Automotive Group Website',s:'Corporate website homepage',c:'Web & UI Design',p:[52],mw:1176},
+ {t:'Aitic',s:'Full branding · electromechanical company',c:'Agency Work',p:[13]},
+ {t:'Ayache Interior Solutions',s:'Full branding & social media',c:'Agency Work',p:[14]},
+ {t:'La Vie',s:'Branding, packaging & social · cosmetics',c:'Agency Work',p:[15]},
+ {t:'Dr. Sara Zougheib',s:'Dental clinic branding & social',c:'Agency Work',p:[16]},
+ {t:'Additional Logos',s:'Logo & branding collection',c:'Agency Work',p:[17]},
+ {t:'Acatemy',s:'Full project · campus cat housing',c:'Branding',p:[19,20,21]},
+ {t:'Logo Re-design',s:'Identity refresh',c:'Branding',p:[23]},
+ {t:'Bowling Infographics',s:'Re-design & event timeline',c:'Branding',p:[24,25]},
+ {t:'Brazilian Restaurant',s:'Logo & brand design',c:'Branding',p:[26]},
+ {t:'Noor',s:'Logo design system',c:'Branding',p:[27]},
+ {t:'Social Media Re-design',s:'Feed redesign',c:'Social Media',p:[29]},
+ {t:'YouTube Channel',s:'Channel branding',c:'Social Media',p:[30]},
+ {t:'Beeleaf · Namliyeh · Munchies',s:'Social media content',c:'Social Media',p:[31]},
+ {t:'Kydline · Bleumarin · Mimoto',s:'Social media content',c:'Social Media',p:[32]},
+ {t:'Robbery Campaign',s:'Awareness campaign',c:'Social Media',p:[33,34]},
+ {t:'Campaign Posters',s:'Print campaign series',c:'Posters',p:[36,37]},
+ {t:'Film Posters: Noir',s:'Three thriller posters · concept',c:'Posters',p:[38]},
+ {t:'Film Posters: Drama',s:'Three drama posters · concept',c:'Posters',p:[39]},
+ {t:'Restaurant Menus',s:"Menu redesigns, incl. Anthony's · concept",c:'Menus',p:[41,42],n:'Self-initiated redesign: my approach to how I would design their menu. Not commissioned by or affiliated with the restaurant.'},
+ {t:'Sunny Side Club',s:'Digital QR menu · concept',c:'Menus',p:[43]},
+ {t:'Fan Art Commissions',s:'Digital portraits',c:'Illustration',p:[45]},
+ {t:'Personal Work',s:'Mixed media illustration',c:'Illustration',p:[46]},
+ {t:'Fan Art & Scenes',s:'Character and scene illustration',c:'Illustration',p:[47]},
+ {t:'Digital Art & Stickers',s:'Neon art and sticker set',c:'Illustration',p:[48]}
+];
+const CATS=['All','Presentations','Web & UI Design','Agency Work','Branding','Social Media','Posters','Menus','Illustration'];
+const $=s=>document.querySelector(s);
+$('#projN').textContent=P.length;
+const words=[...CATS.slice(1),'Brand identity','Packaging'];
+$('#track').innerHTML=[...words,...words].map(w=>`<span>${w}</span>`).join('');
+
+$('#grid').innerHTML=P.map((x,i)=>`<button class="card" type="button" data-i="${i}" data-c="${x.c}" aria-label="Open ${x.t}">
+  <span class="frame"><span class="pill">${x.c}</span><img src="thumbs/p${x.p[0]}.jpg" alt="" loading="${i<9?'eager':'lazy'}"></span>
+  <span class="meta"><span><span class="t">${x.t}</span><span class="d">${x.s}</span></span><span class="arrow" aria-hidden="true">→</span></span></button>`).join('');
+$('#grid').insertAdjacentHTML('beforeend','<a class="next" id="nextTile" href="#contact"><b>Your project could be next.</b><span>Presentations, branding, web, social, posters or illustration.</span><span class="btn sm">Start a project →</span></a>');
+function fitTile(){const g=$('#grid'),cols=getComputedStyle(g).gridTemplateColumns.split(' ').length,n=[...g.querySelectorAll('.card')].filter(c=>!c.hidden).length,r=n%cols;$('#nextTile').style.gridColumn=`span ${r?cols-r:cols}`}
+addEventListener('resize',fitTile);
+$('#filters').innerHTML=CATS.map(c=>`<button class="chip" type="button" data-c="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
+function filter(c){
+  document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));
+  let n=0;document.querySelectorAll('.card').forEach(el=>{const s=c==='All'||el.dataset.c===c;el.hidden=!s;if(s)n++});
+  $('#count').textContent=`${n} project${n===1?'':'s'}`;fitTile();$('#agencyNote').hidden=c!=='Agency Work';
+}
+document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>filter(b.dataset.c));
+filter('All');
+
+const viewer=$('#viewer');let cur=0,lastFocus=null;
+const vis=()=>[...document.querySelectorAll('.card')].filter(c=>!c.hidden).map(c=>+c.dataset.i);
+function open(i){
+  cur=i;const x=P[i],v=vis(),k=v.indexOf(i),prev=P[v[(k-1+v.length)%v.length]],next=P[v[(k+1)%v.length]];
+  $('#vTitle').innerHTML=`${x.t}<small>${x.s}</small>`;
+  $('#vBody').innerHTML=(x.c==='Agency Work'?'<p class="vnote">Team project: I was the main designer, working with other designers, copywriters and the client on the final outcome.</p>':'')+(x.n?`<p class="vnote">${x.n}</p>`:'')+x.p.map(n=>`<img src="img/p${n}.jpg" alt="${x.t}"${x.mw?` style="max-width:${x.mw}px;justify-self:center"`:''}>`).join('')+
+   `<div class="vnext"><button type="button" id="goP"><span>← Previous</span><b>${prev.t}</b></button><button type="button" id="goN"><span>Next →</span><b>${next.t}</b></button></div>`;
+  $('#goP').onclick=()=>step(-1);$('#goN').onclick=()=>step(1);
+  if(viewer.hidden){lastFocus=document.activeElement;viewer.hidden=false;document.body.style.overflow='hidden'}
+  viewer.scrollTop=0;$('#vClose').focus();history.replaceState(null,'','#p'+(i+1));
+}
+function step(d){const v=vis(),k=v.indexOf(cur);open(v[(k+d+v.length)%v.length])}
+function close(){viewer.hidden=true;document.body.style.overflow='';history.replaceState(null,'','#work');lastFocus&&lastFocus.focus()}
+$('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)open(+c.dataset.i)});
+$('#vClose').onclick=close;$('#vPrev').onclick=()=>step(-1);$('#vNext').onclick=()=>step(1);
+document.addEventListener('keydown',e=>{if(viewer.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+const m=location.hash.match(/^#p(\d+)$/);if(m&&P[m[1]-1])open(m[1]-1);
+</script>
+</body>
+</html>
